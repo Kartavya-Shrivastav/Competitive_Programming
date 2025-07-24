@@ -35,6 +35,23 @@ Output:
 11
 */
 
+// --------------------------------------------------------------------------------------------------------------------------------------
+
+// Steps:
+// 1. Read the number of elements `n` and number of queries `q`.
+// 2. Read the initial array of integers.
+// 3. Initialize a Fenwick Tree (Binary Indexed Tree) to handle range sum queries and point updates.
+// 4. For Updating:
+//      - Access the current node: Add v to fenwick[idx] to update the current prefix sum position.
+//      - Move to next responsible node: Use idx += (idx & -idx) to jump to the next index in the tree that includes idx in its prefix sum.
+//      - Repeat until out of bounds: Continue updating while idx is within the Fenwick Tree size to ensure all affected nodes are updated.
+// 5. For Prefix Sum Calculation:
+//      - Start from index idx: Initialize sum = 0 and begin adding values from fenwick[idx].
+//      - Move to parent node: Use idx -= (idx & -idx) to go to the parent index that contributes to the prefix sum.
+//      - Repeat until index is 0: Keep moving and adding values until idx becomes 0, then return the accumulated sum.
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+
 
 #include <bits/stdc++.h>
 using namespace std;
