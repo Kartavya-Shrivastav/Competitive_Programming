@@ -23,6 +23,19 @@ Constraints:
 1 <= n <= 109
 */
 
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
+// Steps:
+// 1. Initialize variables to track the direction of elimination, starting position, and step size.
+// 2. Use a while loop to continue the elimination process until only one number remains.
+// 3. In each iteration, check the current direction:
+//    - If eliminating from left to right, update the starting position based on the current step size.
+//    - If eliminating from right to left, adjust the starting position accordingly.
+// 4. Update the number of elements remaining by halving it.
+// 5. Toggle the direction for the next iteration and double the step size.
+// 6. Return the last remaining number after the loop ends.
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
 
 class Solution {
 public:
